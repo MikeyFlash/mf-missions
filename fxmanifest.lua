@@ -1,28 +1,27 @@
 fx_version 'cerulean'
-games { 'rdr3' }
+game 'rdr3'
+rdr3_warning 'I acknowledge that this is a pre-release build of rdr3 which may not be fully supported. I also acknowledge that content created using this version may not be compatible with the final release.'
 
-author 'Your Name'
-description 'Item Retrieval Mission System for RedM'
-version '1.0.0'
+author 'Mikey Flash'  -- Replace 'Your Name' with your actual name or GitHub username.
+description 'Mission Creator Tool for RedM'
+version '1.0'
 
--- Acknowledgment of RedM's pre-release state
-rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
-
+-- Define the resource's client scripts
 client_scripts {
-    'client/*.lua',
-    'config/missions.lua',
+    'client/*.lua'
 }
 
+-- Define the resource's server scripts
 server_scripts {
-    '@mysql-async/lib/MySQL.lua', -- Ensure MySQL-Async is correctly installed and configured.
     'server/*.lua',
-    'config/missions.lua',
+    'config/missions.lua'  -- Include your missions config file here.
 }
 
+-- UI Files
 ui_page 'html/index.html'
 
 files {
     'html/index.html',
-    'html/css/*.css',
-    'html/js/*.js',
+    'html/css/style.css',
+    'html/js/script.js'
 }
