@@ -1,34 +1,28 @@
-fx_version 'adamant'
-game 'rdr3'
-lua54 'yes'
-rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
+fx_version 'cerulean'
+games { 'rdr3' }
 
-author 'YourName'
-description 'Mission Creator for RedM'
+author 'Your Name'
+description 'Item Retrieval Mission System for RedM'
 version '1.0.0'
 
-shared_scripts {
-    'config.lua',
+-- Acknowledgment of RedM's pre-release state
+rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
+
+client_scripts {
+    'client/*.lua',
+    'config/missions.lua',
 }
 
 server_scripts {
-    '@mysql-async/lib/MySQL.lua', -- Ensure you have MySQL async or similar DB connector compatible with RedM
-    'server/main.lua',
-}
-
-client_scripts {
-    'client/main.lua',
+    '@mysql-async/lib/MySQL.lua', -- Ensure MySQL-Async is correctly installed and configured.
+    'server/*.lua',
+    'config/missions.lua',
 }
 
 ui_page 'html/index.html'
 
 files {
     'html/index.html',
-    'html/index.js',
-    'html/index.css',
-    'html/assets/**/*.*', -- Include all assets like images, fonts, etc.
-}
-
-dependencies {
-    '/onesync',
+    'html/css/*.css',
+    'html/js/*.js',
 }
